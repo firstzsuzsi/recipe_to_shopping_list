@@ -1,0 +1,60 @@
+#+name: stew
+|------------+----------+------|
+| ingredient | quantity | unit |
+|------------+----------+------|
+| pork       |      250 | g    |
+| onions     |       10 | g    |
+| potatoes   |      100 | g    |
+
+#+name: omelet
+|------------+----------+-------|
+| ingredient | quantity | unit  |
+|------------+----------+-------|
+| eggs       |        3 | piece |
+| peas       |       50 | g     |
+| potatoes   |       50 | g     |
+
+#+name: fried_rice
+|-------------+----------+-------|
+| ingredient  | quantity | unit  |
+|-------------+----------+-------|
+| rice        |       50 | g     |
+| peas        |       25 | g     |
+| carrots     |       25 | g     |
+| corn        |       25 | g     |
+| ground meat |       50 | g     |
+| eggs        |        2 | piece |
+
+#+name: recipeAdjust
+#+begin_src python :var recipe=stew count=1 :results table verbatim
+for record in recipe[1:]:
+    record[1] = record[1] * count
+return recipe
+#+end_src
+
+#+RESULTS: recipeAdjust
+: [['ingredient', 'quantity', 'unit'], ['pork', 250, 'g'], ['onions', 10, 'g'], ['potatoes', 100, 'g']]
+
+#+name: list
+|------------+----------+------|
+| ingredient | quantity | unit |
+|------------+----------+------|
+| test       |        1 | l    |
+| test       |        2 | l    |
+| test       |        3 | l    |
+| test       |        4 | l    |
+
+#+name: print_list
+#+begin_src python :results output verbatim
+var=list [["ingredient", "quantity", "unit"], ["nyeh", 300, "cuteness/m^2"]]
+print list
+#+end_src
+
+#+RESULTS: print_list
+
+#+RESULTS:
+
+#+call: recipeAdjust(recipe=stew, count=100)
+
+#+RESULTS:
+: [['ingredient', 'quantity', 'unit'], ['pork', 25000, 'g'], ['onions', 1000, 'g'], ['potatoes', 10000, 'g']]

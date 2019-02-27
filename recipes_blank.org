@@ -1,0 +1,28 @@
+#+name:omlet
+|------------+----------+---------|
+| ingredient | quantity | unit    |
+|------------+----------+---------|
+| egg        |        1 | count   |
+| nutella    |        2 | kg      |
+| love       |     3000 | candela |
+
+#+name: recipeAdjust
+#+begin_src python :var recipe=omlet count=10 :results table
+
+# Code goes here
+
+#+end_src
+
+#+RESULTS: recipeAdjust
+| ingredient | quantity | unit    |
+| egg        |       10 | count   |
+| nutella    |       20 | kg      |
+| love       |    30000 | candela |
+
+#+call: recipeAdjust(recipe=omlet, count=100)
+
+#+RESULTS:
+| ingredient | quantity | unit    |
+| egg        |      100 | count   |
+| nutella    |      200 | kg      |
+| love       |   300000 | candela |
